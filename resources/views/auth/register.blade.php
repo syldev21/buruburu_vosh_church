@@ -71,6 +71,19 @@
                             </div>
                         </div>
                         <div class="row mb-3">
+                            <label style="color:white"  for="dob" class="col-md-4 col-form-label text-md-end">Year of Joining</label>
+
+                            <div class="col-md-6">
+                                <input id="yearJoined" type="date" class="form-control mb-3 pb-3 @error('yearJoined') is-invalid @enderror" name="yearJoined" value="{{ old('yearJoined') }}" required autocomplete="yearJoined">
+{{--                                <yearpicker></yearpicker>--}}
+                                @error('yearJoined')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
                             <label style="color:white"  for="dob" class="col-md-4 col-form-label text-md-end">Date of Birth</label>
 
                             <div class="col-md-6">
@@ -106,7 +119,9 @@
                             <div class="col-md-6">
                                 <select id="cell_group_id" type="text" class="form-control mb-3 pb-3 @error('cell_group_id') is-invalid @enderror" name="cell_group_id" value="{{ old('cell_group_id') }}" required autocomplete="cell_group_id">
                                     <option selected="selected" value="">--Select your Cell Group--</option>
-                                    <option value="2">Cell Group</option>
+                                    @foreach(\App\Models\CellGroup::all() as $cell_group)
+                                        <option value="{{$cell_group['id']}}">{{$cell_group['name']}}</option>
+                                    @endforeach
                                 </select>
                                 @error('cell_group_id')
                                     <span class="invalid-feedback" role="alert">
@@ -121,7 +136,9 @@
                             <div class="col-md-6">
                                 <select id="estate_id" type="text" class="form-control mb-3 pb-3 @error('estate_id') is-invalid @enderror" name="estate_id" value="{{ old('estate_id') }}" required autocomplete="estate_id">
                                     <option selected="selected" value="">--Select your Estate--</option>
-                                    <option value="1">Estate</option>
+                                    @foreach(\App\Models\Estate::all() as $estate)
+                                        <option value="{{$estate['id']}}">{{$estate['name']}}</option>
+                                    @endforeach
                                 </select>
                                 @error('estate_id')
                                     <span class="invalid-feedback" role="alert">
@@ -165,11 +182,11 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label style="color:white"  for="leadership_id" class="col-md-4 col-form-label text-md-end">Leadership</label>
+                            <label style="color:white"  for="leadership_id" class="col-md-4 col-form-label text-md-end">In Leadership?</label>
 
                             <div class="col-md-6">
                                 <select id="leadership_id" type="text" class="form-control @error('leadership_id') is-invalid @enderror" name="leadership_id" value="{{ old('leadership_id') }}" required autocomplete="leadership_id">
-                                    <option selected="selected" value="">--Select your Leadership--</option>
+                                    <option selected="selected" value="">--Select your Leadership Status--</option>
                                     @foreach(config('membership.flag') as $flag)
                                         <option value="{{$flag['id']}}">{{$flag['text']}}</option>
                                     @endforeach
@@ -182,7 +199,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label style="color:white"  for="ministry_id" class="col-md-4 col-form-label text-md-end">Ministry</label>
+                            <label style="color:white"  for="ministry_id" class="col-md-4 col-form-label text-md-end">Ministry of Interest</label>
 
                             <div class="col-md-6">
                                 <select id="ministry_id" type="text" class="form-control @error('ministry_id') is-invalid @enderror" name="ministry_id" value="{{ old('ministry_id') }}" required autocomplete="ministry_id">
@@ -199,7 +216,7 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <label style="color:white"  for="profession_id" class="col-md-4 col-form-label text-md-end">Profession</label>
+                            <label style="color:white"  for="profession_id" class="col-md-4 col-form-label text-md-end">Occupation</label>
 
                             <div class="col-md-6">
                                 <select id="profession_id" type="text" class="form-control mb-3 pb-3 @error('profession_id') is-invalid @enderror" name="profession_id" value="{{ old('profession_id') }}" required autocomplete="profession_id">

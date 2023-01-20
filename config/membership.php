@@ -35,6 +35,18 @@ return [
         'divorced' => [
             'text' => 'Divorced',
             'id' => '3'
+        ],
+        'widow' => [
+            'text' => 'Widow',
+            'id' => '4'
+        ],
+        'widower' => [
+            'text' => 'Widower',
+            'id' => '5'
+        ],
+        'under_age' => [
+            'text' => 'Under Age',
+            'id' => '6'
         ]
     ],
 
@@ -48,7 +60,7 @@ return [
             'id' => '2'
         ],
         'business' => [
-            'text' => 'Business',
+            'text' => 'Self-Employed',
             'id' => '3'
         ]
     ],
@@ -89,6 +101,7 @@ return [
             'text' => 'University - Bachelor"s Degree/Masters Degree/PhD',
             'id' => '4'
         ]
-    ]
+    ],
+    'app_name'=> env('APP_NAME')
 
 ];

@@ -6204,6 +6204,15 @@ var DeleteModal = /*#__PURE__*/function (_Component) {
                 "aria-label": "Close"
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "form-group",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                type: "text",
+                id: "name",
+                className: "form-control mb-3 pb-3",
+                placeholder: "Enter the reason for deleting this member",
+                onChange: this.inputMemberName
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               className: "modal-body",
               children: "Are you sure, You want to delete this member data?"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {

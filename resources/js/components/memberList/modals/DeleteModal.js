@@ -25,6 +25,14 @@ class DeleteModal extends Component{
                             <h1 className="modal-title fs-5" id="exampleModalLabel">Member Delete</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <div className='form-group'>
+                            <input type="text"
+                                   id='name'
+                                   className='form-control mb-3 pb-3'
+                                   placeholder='Enter the reason for deleting this member'
+                                   onChange={this.inputMemberName}
+                            />
+                        </div>
                         <div className="modal-body">
                             Are you sure, You want to delete this member data?
                         </div>
